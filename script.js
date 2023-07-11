@@ -27,7 +27,7 @@ function showMovies(movies) {
     const movieElement = document.createElement('div')
     movieElement.classList.add('movie')
 
-    movieElement.innerHTML = `<div class="movie">
+    movieElement.innerHTML = `
     <img src="${IMG_PATH + poster_path}" alt="" />
     <div class="movie-info">
       <h3>${title}</h3>
@@ -35,18 +35,17 @@ function showMovies(movies) {
     </div>
     <div class="overview">
       <h3>Overview</h3>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit a
-      saepe, quisquam repellat mollitia dolor veritatis fuga. Tempora, ex
-      repellat!
+      ${overview}
     </div>
-  </div>`
+  `
+
+    main.appendChild(movieElement)
   })
 }
 
 function getClassByRate(vote) {
-  vote >= 8 ? 'green' : vote >= 5 ? 'orange' : 'red'
+  return vote >= 8 ? 'green' : vote >= 5 ? 'orange' : 'red'
 }
-
 form.addEventListener('submit', (e) => {
   e.preventDefault()
 
